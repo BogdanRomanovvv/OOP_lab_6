@@ -1,0 +1,5 @@
+Knight TestKnight1 50 50
+Elf TestElf1 60 60
+Druid TestDruid1 200 200
+Druid TestDruid2 210 210
+Knight TestKnight2 400 400

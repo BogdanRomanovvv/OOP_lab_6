@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  dungeon-editor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dungeon_editor_app
+    image: dungeon-editor:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      # Монтируем директорию для сохранения файлов
+      - ./data:/app/data
+    working_dir: /app
+    command: ./dungeon_editor
+
+  dungeon-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dungeon_editor_tests
+    image: dungeon-editor:latest
+    command: ./dungeon_tests
+    profiles:
+      - test
